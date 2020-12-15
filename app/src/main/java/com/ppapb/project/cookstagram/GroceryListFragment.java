@@ -322,7 +322,7 @@ public class GroceryListFragment extends Fragment {
 
     @Override
     protected void onPostExecute(List<String> strings) {
-      // TODO add ingredients to recipe dialog
+
       recipeDirections = strings.get(0);
       recipeDirections = "<h4>Directions</h4>" + recipeDirections.replace("& ", "\n- ");
       AlertDialog.Builder dialog = new Builder(getContext());
