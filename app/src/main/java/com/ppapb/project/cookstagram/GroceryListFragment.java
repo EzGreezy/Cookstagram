@@ -438,7 +438,7 @@ public class GroceryListFragment extends Fragment {
       } else {
         ShoppingItem shoppingItem = new ShoppingItem();
         shoppingItem.setIngredient_id(id);
-        shoppingItem.setIngredient_item("* " + addIngredientDirectAmount);
+        shoppingItem.setIngredient_item("• " + addIngredientDirectAmount);
         new InsertShoppingItem().execute(shoppingItem);
       }
     }
@@ -455,7 +455,7 @@ public class GroceryListFragment extends Fragment {
     protected void onPostExecute(Long id) {
       ShoppingItem shoppingItem = new ShoppingItem();
       shoppingItem.setIngredient_id(id);
-      shoppingItem.setIngredient_item("* " + addIngredientDirectAmount);
+      shoppingItem.setIngredient_item("• " + addIngredientDirectAmount);
       new InsertShoppingItem().execute(shoppingItem);
     }
   }

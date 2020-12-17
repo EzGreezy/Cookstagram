@@ -143,13 +143,6 @@ public class MainActivity extends AppCompatActivity
               .replace(R.id.main_layout, shoppingList)
               .commit();
 
-        String share=editText.getText().toString();
-        ShareCompat.IntentBuilder.from(this)
-                .setChooserTitle("Share text with:")
-                .setText(share)
-                .setType("text/plain")
-                .startChooser();
-      }
     }
 
     DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
