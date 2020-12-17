@@ -117,7 +117,7 @@ public class MainActivity extends AppCompatActivity
           .commit();
 
     } else if (id == R.id.nav_meal_planner) {
-      toolbar.setTitle("Meal Planner");
+      toolbar.setTitle("Recipes");
 
       MealPlannerFragment mealPlannerFragment = new MealPlannerFragment();
       FragmentManager manager = getSupportFragmentManager();
@@ -125,6 +125,31 @@ public class MainActivity extends AppCompatActivity
           .replace(R.id.main_layout, mealPlannerFragment)
           .commit();
 
+    } else if (id == R.id.search_recipes) {
+      toolbar.setTitle("Shopping List");
+
+      GroceryListFragment shoppingList = new GroceryListFragment();
+      FragmentManager manager = getSupportFragmentManager();
+      manager.beginTransaction()
+              .replace(R.id.main_layout, shoppingList)
+              .commit();
+
+    }else if (id == R.id.nav_share) {
+      toolbar.setTitle("Share");
+
+      GroceryListFragment shoppingList = new GroceryListFragment();
+      FragmentManager manager = getSupportFragmentManager();
+      manager.beginTransaction()
+              .replace(R.id.main_layout, shoppingList)
+              .commit();
+
+        String share=editText.getText().toString();
+        ShareCompat.IntentBuilder.from(this)
+                .setChooserTitle("Share text with:")
+                .setText(share)
+                .setType("text/plain")
+                .startChooser();
+      }
     }
 
     DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

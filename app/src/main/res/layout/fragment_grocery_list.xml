@@ -1,22 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  android:layout_height="match_parent"
-  android:layout_width="match_parent"
-  android:orientation="vertical">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
 
+  <View
+      android:id="@+id/view"
+      android:layout_width="match_parent"
+      android:layout_height="140dp"
+      android:background="@color/orangeDark"
+
+    />
+
+  <TextView
+      android:id="@+id/textsatu"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_marginTop="6dp"
+      android:layout_marginLeft="16dp"
+      android:text="Hello"
+      android:textSize="30dp"
+      android:textColor="@color/white"
+      />
+
+  <android.support.v7.widget.AppCompatImageView
+      android:layout_width="70dp"
+      android:layout_height="70dp"
+      android:src="@drawable/ic_egg"
+      android:layout_marginLeft="320dp"
+    />
+
+  <TextView
+      android:id="@+id/textdua"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_marginLeft="16dp"
+      android:layout_marginTop="42dp"
+      android:text="What do you want to cook?"
+      android:textSize="20dp"
+      android:textColor="@color/white"
+      />
   <LinearLayout
     android:id="@+id/search_bar"
+    android:layout_marginTop="80dp"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal">
-    <AutoCompleteTextView
-      android:id="@+id/add_recipe_text"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_weight="1"
-      android:hint="@string/search_for_a_recipe"
-      android:inputType="textAutoComplete|textAutoCorrect"/>
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="0dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="0dp">
+
+      <AutoCompleteTextView
+        android:id="@+id/add_recipe_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:hint="@string/search_for_a_recipe"
+        android:inputType="textAutoComplete|textAutoCorrect"
+        android:drawableLeft="ic_sea"
+          />
+    </android.support.v7.widget.CardView>
+
     <!--<Button-->
       <!--android:id="@+id/add_recipe_button"-->
       <!--android:layout_width="wrap_content"-->
@@ -25,32 +75,60 @@
       <!--android:text="Search"/>-->
   </LinearLayout>
 
+  <TextView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="Shopping List"
+      android:layout_marginTop="160dp"
+      android:layout_marginLeft="16dp"
+      android:textSize="20dp"
+      android:textColor="@color/black"
+      />
+
   <LinearLayout
     android:id="@+id/add_ingredient"
+      android:layout_below="@+id/search_bar"
+      android:layout_marginTop="70dp"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal">
-    <EditText
-      android:id="@+id/add_ingredient_text"
-      android:layout_width="wrap_content"
-      android:layout_height="match_parent"
-      android:layout_weight="1"
-      android:hint="@string/add_one_ingredient"/>
-    <Button
-      android:id="@+id/add_ingredient_button"
-      android:layout_width="wrap_content"
-      android:layout_height="match_parent"
-      android:layout_weight="0"
-      android:text="Add"/>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="0dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="0dp"
+        app:cardBackgroundColor="@color/grey">
+      <EditText
+          android:id="@+id/add_ingredient_text"
+          android:layout_width="wrap_content"
+          android:layout_height="match_parent"
+          android:layout_weight="1"
+          android:hint="@string/add_one_ingredient"/>
+      <Button
+          android:id="@+id/add_ingredient_button"
+          android:layout_width="wrap_content"
+          android:layout_height="match_parent"
+          android:layout_weight="0"
+          android:layout_marginLeft="300dp"
+          android:text="Add"
+          android:background="@color/orangeDark"/>
+    </android.support.v7.widget.CardView>
+
   </LinearLayout>
 
   <ExpandableListView
     android:id="@+id/shopping_expandable_list_view"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+      android:layout_marginLeft="16dp"
+      android:layout_below="@+id/add_ingredient"
     android:indicatorLeft="?android:attr/expandableListPreferredChildIndicatorLeft"
     android:divider="@color/orange"
     android:dividerHeight=".5dp">
 
   </ExpandableListView>
-</LinearLayout>
+</RelativeLayout>
