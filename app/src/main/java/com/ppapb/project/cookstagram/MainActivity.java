@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity
     }.execute(this);
     
     toolbar = (Toolbar) findViewById(R.id.toolbar);
-    toolbar.setTitle("Shopping List");
+    toolbar.setTitle("Cookstagram");
   }
 
   /**
@@ -108,7 +108,7 @@ public class MainActivity extends AppCompatActivity
     Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 
     if (id == R.id.nav_shopping_list) {
-      toolbar.setTitle("Shopping List");
+      toolbar.setTitle("Cookstagram");
 
       GroceryListFragment shoppingList = new GroceryListFragment();
       FragmentManager manager = getSupportFragmentManager();
@@ -126,16 +126,7 @@ public class MainActivity extends AppCompatActivity
           .commit();
 
     } else if (id == R.id.search_recipes) {
-      toolbar.setTitle("Shopping List");
-
-      GroceryListFragment shoppingList = new GroceryListFragment();
-      FragmentManager manager = getSupportFragmentManager();
-      manager.beginTransaction()
-              .replace(R.id.main_layout, shoppingList)
-              .commit();
-
-    }else if (id == R.id.nav_share) {
-      toolbar.setTitle("Share");
+      toolbar.setTitle("Cookstagram");
 
       GroceryListFragment shoppingList = new GroceryListFragment();
       FragmentManager manager = getSupportFragmentManager();
@@ -144,6 +135,16 @@ public class MainActivity extends AppCompatActivity
               .commit();
 
     }
+//    else if (id == R.id.nav_share) {
+//      toolbar.setTitle("Share");
+//
+//      GroceryListFragment shoppingList = new GroceryListFragment();
+//      FragmentManager manager = getSupportFragmentManager();
+//      manager.beginTransaction()
+//              .replace(R.id.main_layout, shoppingList)
+//              .commit();
+//
+//    }
 
     DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
     drawer.closeDrawer(GravityCompat.START);

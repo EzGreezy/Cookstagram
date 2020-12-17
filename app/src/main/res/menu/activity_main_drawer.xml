@@ -18,7 +18,7 @@
         android:title="Shopping List"/>
   </group>
 
-  <item android:title="Communicate">
+  <item android:title="Sharing">
     <menu>
       <item
         android:id="@+id/nav_share"
